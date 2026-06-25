@@ -1,0 +1,51 @@
+// TODO: Yeah I dunno about these, it's pretty benign stuff.
+// - Infernal Resistance and Scarab of Protection interrupts no longer inherit from Ring of Evasion.
+// ==================================== Infernal Resistance ====================================
+
+// new entry "Interrupt_Legendary_InfernalResistance"
+// type "InterruptData"
+// // using "Interrupt_RingOfEvasion"
+// // Infernal Resistance
+// data "DisplayName" "h2468a97fg76d3g46a4g8b2agaa29ed07ae00;1"
+// // Once per &lt;LSTag Tooltip="LongRest"&gt;Long Rest&lt;/LSTag&gt;, when you fail a &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;, you may succeed instead.
+// data "Description" "h2ddb85d2g80deg4402g9c5bgfacf4913efcc;2"
+// data "Icon" "PassiveFeature_Generic_Magical"
+// // data "InterruptContext" "OnPostRoll"
+// data "InterruptContext" "OnPostRoll"
+// // data "InterruptContextScope" "Self"
+// data "InterruptContextScope" "Self"
+// // data "Container" "YesNoDecision"
+// data "Container" "YesNoDecision"
+// data "Conditions" "Self(context.Target,context.Observer) and IsSavingThrow() and IsSpell()"
+// data "Properties" "AdjustRoll(99)"
+// data "Cost" "ReactionActionPoint:1;Interrupt_Legendary_InfernalResistance:1"
+// data "Cooldown" "OncePerRestPerItem"
+// data "InterruptDefaultValue" "Ask;Enabled"
+// data "EnableCondition" "HasActionResource('Interrupt_Legendary_InfernalResistance', 1, 0, false, false, context.Source)"
+// data "EnableContext" "OnActionResourcesChanged"
+
+// ==================================== Scarab of Protection ====================================
+
+// new entry "Interrupt_Scarab_Of_Protection"
+// type "InterruptData"
+// // using "Interrupt_RingOfEvasion"
+// // Scarab of Protection
+// data "DisplayName" "h1fbb9122g14b6g4356gb325gccdf118709d7;2"
+// // Once per &lt;LSTag Tooltip="LongRest"&gt;Long Rest&lt;/LSTag&gt;, when you fail a &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; against necromancy spells or spells cast by undead foes, you can use your reaction to succeed instead.
+// data "Description" "h5f851400ga413g4aa1ga909g1ec696bb569f;3"
+// data "Icon" "PassiveFeature_Generic_Magical"
+// // data "InterruptContext" "OnPostRoll"
+// data "InterruptContext" "OnPostRoll"
+// // data "InterruptContextScope" "Self"
+// data "InterruptContextScope" "Self"
+// // data "Container" "YesNoDecision"
+// data "Container" "YesNoDecision"
+// data "Conditions" "Self(context.Target,context.Observer) and IsSavingThrow() and (Tagged('UNDEAD', context.Source) or IsSpellOfSchool(SpellSchool.Necromancy))"
+// // data "Properties" "SetRoll(20)"
+// data "Properties" "SetRoll(20)"
+// data "Cost" "ReactionActionPoint:1;Interrupt_Scarab_Of_Protection:1"
+// // data "InterruptDefaultValue" "Ask;Enabled"
+// data "InterruptDefaultValue" "Ask;Enabled"
+// data "Cooldown" "OncePerRestPerItem"
+// data "EnableCondition" "HasActionResource('Interrupt_Scarab_Of_Protection', 1, 0, false, false, context.Source)"
+// data "EnableContext" "OnActionResourcesChanged"
