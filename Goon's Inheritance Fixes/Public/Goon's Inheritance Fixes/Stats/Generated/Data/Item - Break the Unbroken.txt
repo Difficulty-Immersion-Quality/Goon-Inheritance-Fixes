@@ -1,0 +1,52 @@
+// ==================================== 1. Break the Unbroken ====================================
+
+// new entry "UND_Duergar_ShortswordOfFirstBlood_Passive"
+// type "PassiveData"
+// // Break the Unbroken
+// data "DisplayName" "h2961f1ecg362bg4945gb7a3g136a55dfc873;2"
+// // Deals an additional [1] to targets that still have all their &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt;.
+// data "Description" "he0491531g77dbg4a48g98e5gf9276ee9b0c3;2"
+// data "DescriptionParams" "DealDamage(1d8,Piercing)"
+// data "TooltipConditionalDamage" "DealDamage(1d8,Piercing)"
+// data "StatsFunctorContext" "OnAttack"
+// data "Conditions" "AttackedWithPassiveSourceWeapon() and HasMaxHP() and IsAttack() and not IsMiss()"
+// data "StatsFunctors" "DealDamage(1d8,Piercing,Magical)"
+
+// new entry "UND_Duergar_ShortswordOfFirstBlood_Passive"
+// type "PassiveData"
+// using "UND_Duergar_ShortswordOfFirstBlood_Passive"
+// data "StatsFunctorContext" ""
+// data "Conditions" ""
+// data "StatsFunctors" ""
+
+// ==================================== First Blood ====================================
+
+new entry "LOW_BhaalAmulet_Passive"
+type "PassiveData"
+// using "UND_Duergar_ShortswordOfFirstBlood_Passive"
+// // First Blood
+data "DisplayName" "hdadaf99eg1673g4539gad27gf3dc1f79cec3;1"
+// // On a hit, inflict &lt;LSTag Type="Status" Tooltip="BLEEDING"&gt;Bleeding&lt;/LSTag&gt; upon targets that have maximum &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt;.
+data "Description" "h08f15931gd582g4f59g895fgdc8dc638977b;3"
+data "DescriptionParams" ""
+data "TooltipConditionalDamage" ""
+// data "StatsFunctorContext" "OnAttack"
+data "StatsFunctorContext" "OnAttack"
+data "Conditions" "HasMaxHP() and IsAttack() and not IsMiss()"
+data "StatsFunctors" "ApplyStatus(BLEEDING, 100, 2)"
+
+// ==================================== The Impaler
+
+// new entry "MAG_ImpalerDamageBonus_Passive"
+// type "PassiveData"
+// using "UND_Duergar_ShortswordOfFirstBlood_Passive"
+// data "DescriptionParams" "DealDamage(1d10,Piercing)"
+// data "TooltipConditionalDamage" "DealDamage(1d10,Piercing)"
+// data "StatsFunctors" "DealDamage(1d10,Piercing)"
+
+// new entry "MAG_ImpalerDamageBonus_Passive"
+// type "PassiveData"
+// using "MAG_ImpalerDamageBonus_Passive"
+// data "StatsFunctorContext" ""
+// data "Conditions" ""
+// data "StatsFunctors" ""

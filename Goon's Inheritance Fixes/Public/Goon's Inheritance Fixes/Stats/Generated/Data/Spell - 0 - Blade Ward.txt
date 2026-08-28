@@ -1,3 +1,36 @@
+// ==================================== 1. Blade Ward ====================================
+
+// new entry "Shout_BladeWard"
+// type "SpellData"
+// data "SpellType" "Shout"
+// data "Level" "0"
+// data "SpellSchool" "Abjuration"
+// data "SpellProperties" "ApplyStatus(BLADE_WARD,100,2)"
+// data "TargetConditions" "Self()"
+// data "Icon" "Spell_Abjuration_BladeWard"
+// // // Blade Ward
+// data "DisplayName" "h77b9ae20ge545g4842gbe2fg8096e232c118;1"
+// // // Take only half the damage from Bludgeoning, Piercing, and Slashing attacks.
+// data "Description" "h44d589a1g7e6dg4975g9ebcgaa2e193d44e1;6"
+// data "TooltipStatusApply" "ApplyStatus(BLADE_WARD,100,2)"
+// data "PrepareSound" "Spell_Prepare_Damage_Radiant_Gen_L1to3"
+// data "PrepareLoopSound" "Spell_Prepare_Damage_Radiant_Gen_L1to3_Loop"
+// data "CastSound" "Spell_Cast_Buff_BladeWard_L1to3"
+// data "TargetSound" "Spell_Impact_Buff_BladeWard_L1to3"
+// data "PreviewCursor" "Cast"
+// data "CastTextEvent" "Cast"
+// data "UseCosts" "ActionPoint:1"
+// data "SpellAnimation" "03496c4a-49e0-4132-b585-3e5ecd1ad8e5,,;,,;4156d364-d2c0-4a01-908c-3552f78f434d,,;6f0a29b6-0ae8-4ebf-a1e4-8069c4a6ad16,,;a9682ef9-5d9e-4ac0-8144-2c7fe6eb868c,,;,,;32fb4d91-7fde-4b05-9144-ea87b9a4284a,,;,,;,,"
+// data "VerbalIntent" "Buff"
+// data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell"
+// data "HitAnimationType" "MagicalNonDamage"
+// data "PrepareEffect" "33302a46-4a12-41dd-8845-6b7314d50022"
+// data "CastEffect" "1a4b0423-005b-4577-b376-815a08809675"
+
+// ==================================== Reference pile - 1 ====================================
+
+// new entry "Shout_LOW_EastwayWizards_BladeWard"
+
 // ==================================== Restore Bardic Inspiration ====================================
 
 new entry "Shout_MAG_Restore_BardicInspiration"
@@ -12,9 +45,9 @@ data "AIFlags" ""
 data "SpellProperties" "RestoreResource(BardicInspiration,1,0)"
 data "TargetConditions" "Self()"
 data "Icon" "Action_Bard_RestoreBardicInspiration"
-// Restore Bardic Inspiration
+// // Restore Bardic Inspiration
 data "DisplayName" "h8d40ac67gfaf9g4a5cgae70ga8ee4bf86e38;1"
-// Play your instrument to restore one of your Bardic Inspiration slots.
+// // Play your instrument to restore one of your Bardic Inspiration slots.
 data "Description" "h2772442bgd7c2g4318g9055g48906fc219d9;1"
 data "TooltipStatusApply" ""
 data "InstrumentComponentPrepareSound" "Instrument_Bard_BardicInspiration_Prepare"
@@ -46,3 +79,43 @@ data "HitAnimationType" "MagicalNonDamage"
 data "PrepareEffect" "33302a46-4a12-41dd-8845-6b7314d50022"
 // data "CastEffect" "1a4b0423-005b-4577-b376-815a08809675"
 data "CastEffect" "1a4b0423-005b-4577-b376-815a08809675"
+
+// ==================================== Eternal Devotion ====================================
+
+new entry "Shout_MAG_Restore_ChannelDivinity"
+type "SpellData"
+data "SpellType" "Shout"
+// using "Shout_BladeWard"
+data "Level" ""
+data "SpellSchool" ""
+data "Cooldown" "OncePerRestPerItem"
+data "AIFlags" ""
+data "SpellProperties" "RestoreResource(ChannelOath,1,0)"
+// data "TargetConditions" "Self()"
+data "TargetConditions" "Self()"
+data "Icon" "Action_Paladin_EternalDevotion"
+// // Eternal Devotion
+data "DisplayName" "h1fecafa0g9bb7g48f6gbb42g63e5f136551d;1"
+// // Recite your Oath to regain 1 &lt;LSTag Type="ActionResource" Tooltip="ChannelOath"&gt;Channel Oath Charge&lt;/LSTag&gt;.
+data "Description" "h26f0e9dcg28b9g4344g863bgf33e8c70e68f;1"
+data "TooltipStatusApply" ""
+// data "PrepareSound" "Spell_Prepare_Damage_Radiant_Gen_L1to3"
+data "PrepareSound" "Spell_Prepare_Damage_Radiant_Gen_L1to3"
+// data "PrepareLoopSound" "Spell_Prepare_Damage_Radiant_Gen_L1to3_Loop"
+data "PrepareLoopSound" "Spell_Prepare_Damage_Radiant_Gen_L1to3_Loop"
+data "CastSound" "Action_Cast_Item_EternalDevotion"
+data "TargetSound" "Action_Impact_Item_EternalDevotion"
+// data "PreviewCursor" "Cast"
+data "PreviewCursor" "Cast"
+// data "CastTextEvent" "Cast"
+data "CastTextEvent" "Cast"
+data "UseCosts" "ActionPoint:1"
+data "SpellAnimation" "2de2c59c-7f42-4419-8b25-09931a8cd5e4,,;,,;3dcb99da-2687-4df9-b290-d0c5db40a974,,;34d0a8b6-5347-4486-8049-c5d9c1b66805,,;7b0adac6-a6a6-4664-9aa4-20106d74f4cc,,;,,;9bffe4ec-8f3a-4e92-be99-0557c783aab1,,;,,;,,"
+// data "VerbalIntent" "Buff"
+data "VerbalIntent" "Buff"
+data "SpellFlags" "HasVerbalComponent;HasSomaticComponent"
+data "Requirements" ""
+// data "HitAnimationType" "MagicalNonDamage"
+data "HitAnimationType" "MagicalNonDamage"
+data "PrepareEffect" "c218f05b-1e12-4298-beff-e4d33a5fa5a5"
+data "CastEffect" "fea4477f-692c-4039-b265-1efd625496a5"

@@ -1,0 +1,23 @@
+// ==================================== 1. Spell Resistance ====================================
+
+// new entry "MAG_SpellResistance_Passive"
+// type "PassiveData"
+// // // Spell Resistance
+// data "DisplayName" "h10610632ga6adg4008g9f19gd91b9cbee9d4;2"
+// // // You have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; against spells. 
+// data "Description" "h379b9d9bgb1b2g40ddgb8bagae9ce243dcc3;3"
+// data "Boosts" "IF(IsSpell()):Advantage(AllSavingThrows)"
+
+// ==================================== Lunar Bestial Fortitude ====================================
+
+new entry "MAG_Druid_Wildshape_SpellResistance_Passive"
+type "PassiveData"
+// using "MAG_SpellResistance_Passive"
+// // Lunar Bestial Fortitude
+data "DisplayName" "h9c84f7a8gdd50g4a36g8281gd1ba6cebe344;3"
+// // You have a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;. You also have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; against spells. This effect persists while using your druidic Wild Shape ability.
+data "Description" "h64d8133fg293eg426cg8518gd5ba4a57a9c0;3"
+data "DescriptionParams" "2"
+data "Boosts" "IF(IsSpell()):Advantage(AllSavingThrows);AC(2)"
+data "StatsFunctorContext" "OnStatusApplied"
+data "StatsFunctors" "IF(StatusHasStatusGroup(context.StatusId, 'SG_Polymorph_BeastShape') or HasAnyStatus({'WILDSHAPE_STARRY_ARCHER_PLAYER','WILDSHAPE_STARRY_CHALICE_PLAYER','WILDSHAPE_STARRY_DRAGON_PLAYER'},{},{'MAG_DRUID_WILDSHAPE_SPELL_RESISTANCE'},context.Source)):ApplyStatus(MAG_DRUID_WILDSHAPE_SPELL_RESISTANCE, 100, -1)"

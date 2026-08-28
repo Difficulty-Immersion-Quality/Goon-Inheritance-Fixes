@@ -1,4 +1,48 @@
-// ==================================== Corrosive Phlegm - Bulette ====================================
+// ==================================== 1. Acid Splash ====================================
+
+// new entry "Projectile_AcidSplash"
+// type "SpellData"
+// data "SpellType" "Projectile"
+// data "Level" "0"
+// data "SpellSchool" "Conjuration"
+// data "TargetFloor" "-1"
+// data "TargetRadius" "18"
+// data "AreaRadius" "2"
+// data "ExplodeRadius" "2"
+// data "SpellRoll" "not SavingThrow(Ability.Dexterity, SourceSpellDC())"
+// data "SpellSuccess" "DealDamage(LevelMapValue(D6Cantrip),Acid,Magical)"
+// data "SpellFail" "IF(HasPassive('PotentCantrip',context.Source)):DealDamage((LevelMapValue(D6Cantrip))/2,Acid,Magical); IF(not HasPassive('PotentCantrip',context.Source)):ApplyStatus(SAVED_AGAINST_HOSTILE_SPELL, 100, 0)"
+// data "TargetConditions" "not Self() and not Dead()"
+// data "ProjectileCount" "1"
+// data "Trajectories" "2e9faa4c-79d7-4dc2-ba5f-5c7c4c203496"
+// data "Icon" "Spell_Conjuration_AcidSplash"
+// // Acid Splash
+// data "DisplayName" "hceb740bag7c5dg46c1g89e3gaa4e44b58df5;1"
+// // Throw a bubble of acid that damages each creature it hits.
+// data "Description" "h96f48f85g27edg411dg9b33g5242979c2895;4"
+// data "TooltipDamageList" "DealDamage(LevelMapValue(D6Cantrip),Acid)"
+// data "TooltipAttackSave" "Dexterity"
+// data "PrepareSound" "Spell_Prepare_Damage_Acid_Gen_L1to3"
+// data "PrepareLoopSound" "Spell_Prepare_Damage_Acid_Gen_L1to3_Loop"
+// data "CastSound" "Spell_Cast_Damage_Acid_AcidSplash_L1to3"
+// data "PreviewCursor" "Cast"
+// data "CastTextEvent" "Cast"
+// data "CycleConditions" "Enemy() and not Dead()"
+// data "UseCosts" "ActionPoint:1"
+// data "SpellAnimation" "3ff87abf-1ea1-4c32-aadf-c822d74c7dc0,,;,,;38cdb41c-2eec-4e03-bb31-83cff0346c35,,;85414f5f-b448-4dda-9370-1b6c4b38b561,,;d8925ce4-d6d9-400c-92f5-ad772ef7f178,,;,,;eadedcce-d01b-4fbb-a1ae-d218f13aa5d6,,;,,;,,"
+// data "VerbalIntent" "Damage"
+// data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;HasHighGroundRangeExtension;RangeIgnoreVerticalThreshold;IsHarmful;CanAreaDamageEvade"
+// data "HitAnimationType" "MagicalDamage_External"
+// data "PrepareEffect" "41193b01-e0c2-4945-ba40-7c3464b71bc0"
+// data "CastEffect" "3d48b43d-1f17-4947-aa43-c142288d3f29"
+// data "DamageType" "Acid"
+
+// ==================================== Reference pile - 1 ====================================
+
+// new entry "Projectile_AcidSplash_Goblin"
+// new entry "Projectile_AcidSplash_Trap"
+
+// ==================================== Corrosive Phlegm ====================================
 
 new entry "Projectile_ToxicSpit_Bulette"
 type "SpellData"
@@ -22,9 +66,9 @@ data "TargetConditions" "not Dead()"
 data "ProjectileCount" "1"
 data "Trajectories" "f1512ea3-8d5d-4320-87ac-6674309bac49"
 data "Icon" "GenericIcon_DamageType_Acid"
-// Corrosive Phlegm
+// // Corrosive Phlegm
 data "DisplayName" "hee8288cag120cg4bc3gaeccgf8452633bd76;2"
-// Expectorate on a target.
+// // Expectorate on a target.
 data "Description" "h13d36fa8g5377g45d7g8c28gebdf476e508e;4"
 data "TooltipDamageList" "DealDamage(2d8+3,Acid)"
 data "TooltipOnSave" "961753f4-c345-4bc4-b408-1d5b87a5ab0c"

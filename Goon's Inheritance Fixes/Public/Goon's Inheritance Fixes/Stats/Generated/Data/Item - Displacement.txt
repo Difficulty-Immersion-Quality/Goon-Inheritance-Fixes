@@ -1,0 +1,73 @@
+// ==================================== 1. Displacement ====================================
+
+// new entry "MAG_PHB_Displacement_Cloak_Passive"
+// type "PassiveData"
+// // // Displacement
+// data "DisplayName" "h30dfd004g2e7dg49feg8e91gb062ecaf2520;2"
+// // // At the beginning of the wearer's turn, the cloak activates, granting enemies &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; that target the wearer. This effect lasts until the wearer takes damage. 
+// data "Description" "h22f785a3g6a73g4939gaa55gcd54c9f49a43;3"
+
+// ==================================== Well-Liked and Well-Fortified ====================================
+
+new entry "MAG_CharismaCaster_TempHP_Passive"
+type "PassiveData"
+// using "MAG_PHB_Displacement_Cloak_Passive"
+// // Well-Liked and Well-Fortified
+data "DisplayName" "hf29c2ac9gea2eg4f2bg9ef8g84032470ed90;1"
+// // At the beginning of the wearer's turn, the robe activates, granting them &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; equal to their Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
+data "Description" "h884d0adcgad56g4731g8318g7d15a267ec4a;2"
+
+// ==================================== 2. Cloak of Dispalcement - technical ====================================
+
+// new entry "MAG_PHB_CLOAK_OF_DISPLACEMENT_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// // // %%%|Cloak of Dispalcement Technical|
+// data "DisplayName" "h83f77d95ga2a7g405bgb335gb410d56891ad;1"
+// // // %%%|Technical status to add the displacement status effect at the start of the turn|
+// data "Description" "h03006389g343cg4dc3gab0fgff9de272e46f;1"
+// data "StackId" "MAG_PHB_CLOAK_OF_DISPLACEMENT_TECHNICAL"
+// data "TickType" "StartTurn"
+// data "TickFunctors" "IF(Combat() and not Dead()):ApplyStatus(MAG_PHB_CLOAK_OF_DISPLACEMENT, 100, 2)"
+// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
+// data "OnRemoveFunctors" "RemoveStatus(MAG_PHB_CLOAK_OF_DISPLACEMENT)"
+
+// ==================================== Potent Robe - technical ====================================
+
+new entry "MAG_CHARISMA_CASTER_TEMP_HP_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+// using "MAG_PHB_CLOAK_OF_DISPLACEMENT_TECHNICAL"
+// // %%%|Cloak of Dispalcement Technical|
+// data "DisplayName" "h83f77d95ga2a7g405bgb335gb410d56891ad;1"
+data "DisplayName" "h83f77d95ga2a7g405bgb335gb410d56891ad;1"
+// // %%%|Technical status to add the displacement status effect at the start of the turn|
+// data "Description" "h03006389g343cg4dc3gab0fgff9de272e46f;1"
+data "Description" "h03006389g343cg4dc3gab0fgff9de272e46f;1"
+data "StackId" "MAG_CHARISMA_CASTER_TEMP_HP_TECHNICAL"
+// data "TickType" "StartTurn"
+data "TickType" "StartTurn"
+data "TickFunctors" "IF(Combat() and not Dead()):ApplyStatus(MAG_CHARISMA_CASTER_TEMP_HP, 100, -1)"
+// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
+data "OnRemoveFunctors" "RemoveStatus(MAG_CHARISMA_CASTER_TEMP_HP)"
+
+// ==================================== Swires' Sledboard - echnical ====================================
+
+new entry "MAG_FORCE_SHIELD_WARD_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+// using "MAG_PHB_CLOAK_OF_DISPLACEMENT_TECHNICAL"
+// // %%%|Cloak of Dispalcement Technical|
+// data "DisplayName" "h83f77d95ga2a7g405bgb335gb410d56891ad;1"
+data "DisplayName" "h83f77d95ga2a7g405bgb335gb410d56891ad;1"
+// // %%%|Technical status to add the displacement status effect at the start of the turn|
+// data "Description" "h03006389g343cg4dc3gab0fgff9de272e46f;1"
+data "Description" "h03006389g343cg4dc3gab0fgff9de272e46f;1"
+data "StackId" "MAG_FORCE_SHIELD_WARD_TECHNICAL"
+// data "TickType" "StartTurn"
+data "TickType" "StartTurn"
+data "TickFunctors" "IF(Combat() and not Dead())ApplyStatus(MAG_ZOC_FORCE_CONDUIT, 100, 2);IF(Combat() and not Dead())ApplyStatus(MAG_ZOC_FORCE_CONDUIT_DURATION_TECHNICAL, 100, 1)"
+// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
+data "OnRemoveFunctors" ""

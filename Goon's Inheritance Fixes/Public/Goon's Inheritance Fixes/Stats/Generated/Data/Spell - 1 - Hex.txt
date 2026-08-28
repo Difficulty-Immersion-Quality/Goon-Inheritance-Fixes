@@ -1,3 +1,5 @@
+// TODO: Refactor.
+
 // ==================================== Psionic Pull ====================================
 // Target_PsionicPull, Target_SteelWatcher_Biped_RetrievingShot, and Target_MAG_RetrievingShot all inherit from Target_Hex (in a chain) and Valdacil's Spell Adjustments just breaks them all.
 

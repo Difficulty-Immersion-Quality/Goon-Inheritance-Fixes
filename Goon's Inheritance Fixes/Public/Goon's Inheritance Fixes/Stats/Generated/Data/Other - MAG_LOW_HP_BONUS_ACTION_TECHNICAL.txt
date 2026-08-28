@@ -1,0 +1,74 @@
+// ==================================== 1. Helmet of Grit - technical ====================================
+
+// new entry "MAG_LOW_HP_BONUS_ACTION_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// // // %%% EMPTY
+// data "DisplayName" "h179b9ea9g72f5g4aebgb8d2gf85e790f4b79;2"
+// data "StackId" "MAG_LOW_HP_BONUS_ACTION_REMOVER_TECHNICAL"
+// data "TickType" ""
+// data "Boosts" ""
+// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
+// data "OnApplyFunctors" "IF(HasHPPercentageEqualOrLessThan(50, context.Target)):ApplyStatus(MAG_BONUS_ACTION,100,-1)"
+// data "OnRemoveFunctors" "IF(not HasActionResource('BonusActionPoint', 100, 0, true)):UseActionResource(BonusActionPoint,1);RemoveStatus(MAG_BONUS_ACTION)"
+// data "StatusEffect" ""
+
+// ==================================== Lofty Sorcerer's Amulet - technical ====================================
+
+new entry "MAG_GREATER_SORCERY_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+// using "MAG_LOW_HP_BONUS_ACTION_TECHNICAL"
+// // %%% EMPTY
+// data "DisplayName" "h179b9ea9g72f5g4aebgb8d2gf85e790f4b79;2"
+data "DisplayName" "h179b9ea9g72f5g4aebgb8d2gf85e790f4b79;2"
+data "StackId" "MAG_GREATER SORCERY_TECHNICAL"
+// data "TickType" ""
+data "TickType" ""
+// data "Boosts" ""
+data "Boosts" ""
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
+data "OnApplyFunctors" "IF(not HasStatus('MAG_GREATER_SORCERY_TRACKER')):ApplyStatus(MAG_GREATER_SORCERY_SORCERY_POINT, 100, -1)"
+data "OnRemoveFunctors" "IF(not HasStatus('MAG_GREATER_SORCERY_TRACKER') and not HasActionResource('SorceryPoint', 100, 0, true)):UseActionResource(SorceryPoint, 1);RemoveStatus(MAG_GREATER_SORCERY_SORCERY_POINT)"
+// data "StatusEffect" ""
+data "StatusEffect" ""
+
+// ==================================== Amulet of The Devout - technical ====================================
+
+new entry "MAG_OF_DEVOUT_AMULET_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+// using "MAG_LOW_HP_BONUS_ACTION_TECHNICAL"
+// // %%% EMPTY
+// data "DisplayName" "h179b9ea9g72f5g4aebgb8d2gf85e790f4b79;2"
+data "DisplayName" "h179b9ea9g72f5g4aebgb8d2gf85e790f4b79;2"
+data "StackId" "MAG_OF_DEVOUT_AMULET_TECHNICAL"
+// data "TickType" ""
+data "TickType" ""
+// data "Boosts" ""
+data "Boosts" ""
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
+data "OnApplyFunctors" "IF(not HasStatus('MAG_OF_DEVOUT_AMULET_TRACKER')):ApplyStatus(MAG_OF_DEVOUT_AMULET_CHANNEL_DIVINITY, 100, -1)"
+data "OnRemoveFunctors" "IF(not HasStatus('MAG_OF_DEVOUT_AMULET_TRACKER') and not HasActionResource('ChannelDivinity', 100, 0, true)):UseActionResource(ChannelDivinity, 1);RemoveStatus(MAG_OF_DEVOUT_AMULET_CHANNEL_DIVINITY)"
+// data "StatusEffect" ""
+data "StatusEffect" ""
+
+// ==================================== Spell Savant Amulet - technical ====================================
+
+new entry "MAG_THE_AMPLIFIER_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+// using "MAG_LOW_HP_BONUS_ACTION_TECHNICAL"
+// // %%% EMPTY
+// data "DisplayName" "h179b9ea9g72f5g4aebgb8d2gf85e790f4b79;2"
+data "DisplayName" "h179b9ea9g72f5g4aebgb8d2gf85e790f4b79;2"
+data "StackId" "MAG_THE_AMPLIFIER_TECHNICAL"
+// data "TickType" ""
+data "TickType" ""
+// data "Boosts" ""
+data "Boosts" ""
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
+data "OnApplyFunctors" "IF(not HasStatus('MAG_THE_AMPLIFIER_TRACKER')):ApplyStatus(MAG_THE_AMPLIFIER_SPELL_SLOT, 100, -1)"
+data "OnRemoveFunctors" "IF(not HasStatus('MAG_THE_AMPLIFIER_TRACKER') and not HasActionResource('SpellSlot', 100, 2, true)):UseActionResource(SpellSlot, 1, 2);RemoveStatus(MAG_THE_AMPLIFIER_SPELL_SLOT)"
+// data "StatusEffect" ""
+data "StatusEffect" ""

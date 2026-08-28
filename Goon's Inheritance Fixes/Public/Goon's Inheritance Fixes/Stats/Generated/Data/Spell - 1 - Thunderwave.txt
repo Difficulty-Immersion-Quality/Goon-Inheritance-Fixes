@@ -1,3 +1,5 @@
+// TODO: Refactor.
+
 // ==================================== Concussive Burst - Yurgir ====================================
 
 new entry "Zone_ConcussiveBlast_Orthon"

@@ -1,0 +1,85 @@
+// ==================================== 1. Divine Smite ====================================
+
+// new entry "Interrupt_Smite_Divine"
+// type "InterruptData"
+// // // Divine Smite
+// data "DisplayName" "hec12d3b6g365eg4809g8053gbbf4ec3c0686;1"
+// // // Your weapon deals an additional [1], increased by [2] when attacking fiends or undead.
+// data "Description" "h905cec81g7e41g4b05gaaddg3d51678f3ecc;4"
+// data "DescriptionParams" "DealDamage(2d8,Radiant);DealDamage(1d8,Radiant)"
+// // // This reaction won't trigger on a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;.
+// data "ExtraDescription" "hcd476fdag8f18g48b5gb90egc5d15da4b8e7;3"
+// data "Icon" "Action_Paladin_DivineSmite"
+// data "InterruptContext" "OnCastHit"
+// data "InterruptContextScope" "Self"
+// data "Container" "YesNoDecision"
+// data "Conditions" "IsAbleToReact(context.Observer) and not Self() and not Item() and IsMeleeAttack() and not IsDivineSmite() and Self(context.Source,context.Observer) and HasDamageEffectFlag(DamageFlags.Hit) and IsWeaponAttack() and not IsCritical() and not IsKillingBlow() and not AnyEntityIsItem();"
+// data "Properties" "IF(not UndeadOrFiend(context.Target)):DealDamage(2d8,Radiant,Magical);IF(UndeadOrFiend(context.Target)):DealDamage(3d8,Radiant,Magical);ApplyStatus(INTERRUPT_SMITE_DIVINE_VFX,100,0)"
+// data "Cost" "SpellSlotsGroup:1:1:1"
+// data "Stack" "DivineSmite"
+// data "EnableCondition" "not HasStatus('SG_Polymorph') or HasAnyStatus({'SG_Disguise','WILDSHAPE_STARRY_ARCHER_PLAYER','WILDSHAPE_STARRY_CHALICE_PLAYER','WILDSHAPE_STARRY_DRAGON_PLAYER'});"
+// data "EnableContext" "OnStatusApplied;OnStatusRemoved"
+
+// new entry "Interrupt_Smite_Divine"
+// type "InterruptData"
+// using "Interrupt_Smite_Divine"
+// data "Properties" "IF(not UndeadOrFiend(context.Target)):DealDamage(2d8,Radiant,Magical,,0,,true,false);IF(UndeadOrFiend(context.Target)):DealDamage(3d8,Radiant,Magical,,0,,true,false);ApplyStatus(INTERRUPT_SMITE_DIVINE_VFX,100,0)"
+
+// ==================================== Cunning Combo ====================================
+
+new entry "Interrupt_MAG_Cunning_Combo_HandCrossbow"
+type "InterruptData"
+// using "Interrupt_Smite_Divine"
+// // Cunning Combo
+data "DisplayName" "h1220008ag2888g4a19g8e37g2af50c2dd807;1"
+// // When you shoot a target at close range, you can make an additional melee attack against it as a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;reaction&lt;/LSTag&gt;.
+data "Description" "h2b3e8e83gb749g4739gb87bg7cf3f2eeada5;1"
+data "DescriptionParams" ""
+// // This reaction won't trigger on a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt;.
+// data "ExtraDescription" "hcd476fdag8f18g48b5gb90egc5d15da4b8e7;3"
+data "ExtraDescription" "hcd476fdag8f18g48b5gb90egc5d15da4b8e7;3"
+// data "Icon" "Action_Paladin_DivineSmite"
+data "Icon" "Action_Paladin_DivineSmite"
+data "ExtraDescriptionParams" ""
+data "InterruptContext" "OnCastHit"
+// data "InterruptContextScope" "Self"
+data "InterruptContextScope" "Self"
+// data "Container" "YesNoDecision"
+data "Container" "YesNoDecision"
+data "Conditions" "not DistanceToEntityGreaterThan(2, context.ObserverPosition, context.Target) and IsAbleToReact(context.Observer) and not Item() and IsRangedAttack() and Self(context.Source,context.Observer) and HasDamageEffectFlag(DamageFlags.Hit) and IsWeaponAttack() and not IsKillingBlow() and HasLastAttackTriggered()"
+data "Properties" "UseAttack()"
+data "Cost" "ReactionActionPoint:1"
+data "Stack" ""
+// data "EnableCondition" "not HasStatus('SG_Polymorph') or HasAnyStatus({'SG_Disguise','WILDSHAPE_STARRY_ARCHER_PLAYER','WILDSHAPE_STARRY_CHALICE_PLAYER','WILDSHAPE_STARRY_DRAGON_PLAYER'});"
+data "EnableCondition" "not HasStatus('SG_Polymorph') or HasAnyStatus({'SG_Disguise','WILDSHAPE_STARRY_ARCHER_PLAYER','WILDSHAPE_STARRY_CHALICE_PLAYER','WILDSHAPE_STARRY_DRAGON_PLAYER'});"
+// data "EnableContext" "OnStatusApplied;OnStatusRemoved"
+data "EnableContext" "OnStatusApplied;OnStatusRemoved"
+
+// ==================================== Withering Cut ====================================
+
+new entry "Interrupt_TheDueller_WitheringCut"
+type "InterruptData"
+// using "Interrupt_Smite_Divine"
+// // Withering Cut
+data "DisplayName" "hc61596f9gc801g4933gaf73g13269717f10e;1"
+// // When you hit a creature with melee weapon, you can spend a reaction to deal additional Necrotic damage equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;.
+data "Description" "h5ea742a7g0d9cg447cga012g95679912ce86;1"
+data "DescriptionParams" ""
+data "ExtraDescription" ""
+data "ExtraDescriptionParams" ""
+data "Icon" "GenericIcon_DamageType_Necrotic"
+// data "InterruptContext" "OnCastHit"
+data "InterruptContext" "OnCastHit"
+// data "InterruptContextScope" "Self"
+data "InterruptContextScope" "Self"
+// data "Container" "YesNoDecision"
+data "Container" "YesNoDecision"
+data "Conditions" "IsAbleToReact(context.Observer) and not Item() and IsMeleeAttack() and Self(context.Source,context.Observer) and HasDamageEffectFlag(DamageFlags.Hit) and IsWeaponAttack()"
+data "Properties" "DealDamage(ProficiencyBonus, Necrotic);ApplyStatus(MAG_NECROTIC_NECROTIC_BLAST_TECHNICAL,100, 0)"
+data "Cost" "ReactionActionPoint:1"
+data "Stack" ""
+// data "EnableCondition" "not HasStatus('SG_Polymorph') or HasAnyStatus({'SG_Disguise','WILDSHAPE_STARRY_ARCHER_PLAYER','WILDSHAPE_STARRY_CHALICE_PLAYER','WILDSHAPE_STARRY_DRAGON_PLAYER'});"
+data "EnableCondition" "not HasStatus('SG_Polymorph') or HasAnyStatus({'SG_Disguise','WILDSHAPE_STARRY_ARCHER_PLAYER','WILDSHAPE_STARRY_CHALICE_PLAYER','WILDSHAPE_STARRY_DRAGON_PLAYER'});"
+// data "EnableContext" "OnStatusApplied;OnStatusRemoved"
+data "EnableContext" "OnStatusApplied;OnStatusRemoved"
+data "InterruptDefaultValue" "Enabled;Ask"
